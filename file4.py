@@ -50,18 +50,45 @@
 #
 # print(cenzuraCyfr("Ala1ma2kota345"))
 
-file = open('py1.2')
-slownik = {}
+# file = open('py1.2')
+# slownik = {}
+#
+# wiersze = file.readlines()
+# for i in wiersze:
+#     podzial1 = i.split('. ')[1]
+#     podzial2 = podzial1.split(' has ')
+#     imie = podzial2[0]
+#     podzial3 = podzial2[1].split(' and ')
+#     oczy = podzial3[0]
+#     podzial4 = podzial3[1].split(' is ')
+#     wzrost = podzial4[0].split(' ')[1]
+#     slownik[imie] = {'height': wzrost, 'eyes': oczy}
+#
+# print(slownik)
 
-wiersze = file.readlines()
-for i in wiersze:
-    podzial1 = i.split('. ')[1]
-    podzial2 = podzial1.split(' has ')
-    imie = podzial2[0]
-    podzial3 = podzial2[1].split(' and ')
-    oczy = podzial3[0]
-    podzial4 = podzial3[1].split(' is ')
-    wzrost = podzial4[0].split(' ')[1]
-    slownik[imie] = {'height': wzrost, 'eyes': oczy}
+import requests
+# resp = requests.get('http://py.net/status')
+# url = 'http://py.net/status/set'
+# newStatus = {"status": "123"}
+# resp = requests.post(url, json=newStatus)
+# print(resp.json())
 
-print(slownik)
+# import requests
+# url = 'http://py.net/register'
+# newUser = {"name": "Krystian", "password": "123"}
+# resp = requests.post(url, json=newUser)
+# print(resp.json())
+
+# url = 'http://py.net/auth'
+# login = {"name": "Krystian", "password": "123"}
+# resp = requests.post(url, json=login)
+# print(resp.json()["api_key"])
+
+# koty = requests.get('http://py.net/cat')
+# with open('kot.jpg', 'wb') as file:
+#     file.write(koty.content)
+
+url = 'http://py.net/query_string?a=1&b=2'
+resp = requests.get(url)
+from pprint import pprint as pp
+pp(resp.json())
